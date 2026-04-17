@@ -1,78 +1,495 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mauro Santos | Portfólio</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-  </head>
-  <body>
-    <header>
-      <nav>
-        <a href="index.html" class="nav-logo">Mauro Santos</a>
-        <ul>
-          <li><a href="index.html" class="active">Início</a></li>
-          <li><a href="projetos.html">Projetos</a></li>
-          <li><a href="sobre.html">Sobre</a></li>
-        </ul>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mauro Santos — Product Analyst</title>
+  <meta name="description" content="Portfólio de Mauro Santos, Product Analyst com foco em discovery, priorização e base técnica em front-end e dados.">
 
-    <main class="hero">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1>Mauro Santos</h1>
-          <p>
-            Analista de Sistemas visando integrar a tecnologia e o negócio para
-            otimizar processos e resultados.
-          </p>
-          <div class="hero-actions">
-            <a href="projetos.html" class="btn">Meus Projetos</a>
-            <div class="social-links">
-              <a href="https://github.com/omaurosantos/" target="_blank"
-                ><i class="fa-brands fa-github"></i
-              ></a>
-              <a href="https://linkedin.com/in/omaurosantos" target="_blank"
-                ><i class="fa-brands fa-linkedin"></i
-              ></a>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mauro Santos — Product Analyst">
+  <meta property="og:description" content="Conectando negócio, experiência e tecnologia para gerar valor real.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Ir para o topo">mauro.</a>
+
+      <button class="nav-toggle" id="nav-toggle"
+              aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu" role="list">
+        <li><a href="#sobre"      class="nav-link">Sobre</a></li>
+        <li><a href="#experiencia" class="nav-link">Experiência</a></li>
+        <li><a href="#projetos"   class="nav-link">Projetos</a></li>
+        <li><a href="#skills"     class="nav-link">Skills</a></li>
+        <li><a href="#contato"    class="nav-link nav-link--cta">Contato</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-glow hero-glow--1"></div>
+        <div class="hero-glow hero-glow--2"></div>
+      </div>
+
+      <div class="container hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot" aria-hidden="true"></span>
+          Disponível para novas oportunidades
+        </div>
+
+        <h1 class="hero-name">Mauro Santos</h1>
+        <p class="hero-title">Product Analyst</p>
+        <p class="hero-tagline">
+          Conectando negócio, experiência e tecnologia<br class="br-lg">
+          para gerar valor real.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#projetos" class="btn btn--primary">Ver projetos</a>
+          <a href="#contato"  class="btn btn--secondary">Falar comigo</a>
+        </div>
+
+        <div class="hero-socials">
+          <a href="https://github.com/omaurosantos/" target="_blank" rel="noopener noreferrer"
+             class="social-link" aria-label="GitHub de Mauro Santos">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+          </a>
+          <a href="https://linkedin.com/in/omaurosantos" target="_blank" rel="noopener noreferrer"
+             class="social-link" aria-label="LinkedIn de Mauro Santos">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="mailto:maurodopradosantos@gmail.com"
+             class="social-link" aria-label="Enviar e-mail para Mauro Santos">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <span class="scroll-label">scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ===================== SOBRE ===================== -->
+    <section class="section" id="sobre">
+      <div class="container">
+        <p class="section-label reveal">Sobre</p>
+        <h2 class="section-title reveal">
+          Produto com visão de negócio<br class="br-lg"> e base técnica
+        </h2>
+
+        <div class="sobre-grid">
+          <div class="sobre-text reveal">
+            <p>
+              Atuo em produto digital com foco em discovery, priorização e execução.
+              Tenho base técnica em desenvolvimento front-end e leitura de código, o que me
+              ajuda a aprofundar definições, apoiar times de engenharia e tomar decisões
+              orientadas por dados. Gosto de transformar contexto complexo em soluções claras.
+            </p>
+            <p>
+              Já atuei como Product Owner e IT Analyst — essa diversidade de contextos me dá
+              uma visão mais completa do ciclo de desenvolvimento e facilita a comunicação
+              entre produto, design e engenharia.
+            </p>
+          </div>
+
+          <div class="sobre-cards">
+            <div class="info-card reveal">
+              <div class="info-card__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+              </div>
+              <div>
+                <p class="info-card__label">Formação</p>
+                <p class="info-card__title">Desenvolvimento de Software Multiplataforma</p>
+                <p class="info-card__sub">Fatec Jacareí &middot; ago/2023 – jun/2026</p>
+              </div>
+            </div>
+
+            <div class="info-card reveal">
+              <div class="info-card__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 12a9 9 0 1 0 18 0A9 9 0 0 0 3 12"/>
+                  <path d="M3 12h4m10 0h4M12 3v4m0 10v4"/>
+                </svg>
+              </div>
+              <div>
+                <p class="info-card__label">Além do trabalho</p>
+                <p class="info-card__title">Explorar novos lugares de moto</p>
+                <p class="info-card__sub">
+                  Velocidade e liberdade que também inspiram minha forma de pensar em produto.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="hero-photo">
-          <img
-            src="assets/foto_mauro.jpeg"
-            alt="Foto de Mauro"
-            class="profile-pic"
-          />
-        </div>
       </div>
-    </main>
+    </section>
 
-    <footer>
-      <div class="footer-content">
-        <p>&copy; 2025 Mauro Santos. Todos os direitos reservados.</p>
-        <div class="social-links">
-          <a href="mailto:maurodopradosantos@gmail.com"
-            ><i class="fa-solid fa-envelope"></i
-          ></a>
-          <a href="https://github.com/omaurosantos/" target="_blank"
-            ><i class="fa-brands fa-github"></i
-          ></a>
-          <a href="https://linkedin.com/in/omaurosantos" target="_blank"
-            ><i class="fa-brands fa-linkedin"></i
-          ></a>
+    <!-- ===================== EXPERIÊNCIA ===================== -->
+    <section class="section section--alt" id="experiencia">
+      <div class="container">
+        <p class="section-label reveal">Experiência</p>
+        <h2 class="section-title reveal">Trajetória profissional</h2>
+
+        <div class="timeline">
+
+          <article class="timeline-item reveal">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Product Analyst</h3>
+                  <p class="timeline-company">Qeevo Group / Quero Educação</p>
+                </div>
+                <time class="timeline-period" datetime="2025-08">ago/2025 – atual</time>
+              </div>
+              <p class="timeline-desc">
+                Atuo nos marketplaces Quero Bolsa e Melhor Escola com foco em Discovery
+                Experience, jornada até o checkout e iniciativas orientadas por dados.
+                Responsável pela priorização de iniciativas com foco em valor e experiência,
+                análises, queries e automações para apoiar decisões, e leitura de regras de
+                negócio no código para aprofundar definições.
+              </p>
+              <div class="tag-group">
+                <span class="tag">Product Discovery</span>
+                <span class="tag">Data-driven</span>
+                <span class="tag">Backlog</span>
+                <span class="tag">SQL</span>
+                <span class="tag">E-commerce</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">IT Analyst</h3>
+                  <p class="timeline-company">GasGas Motorcycles</p>
+                </div>
+                <time class="timeline-period" datetime="2024-02">fev/2024 – ago/2025</time>
+              </div>
+              <p class="timeline-desc">
+                Gestão de e-commerce e sistemas com Magento 2 e integrações com Olist Tiny.
+                Responsável pela gestão de garantias e reembolsos com a rede de dealers e
+                referência para demandas internas de TI e melhorias contínuas.
+              </p>
+              <div class="tag-group">
+                <span class="tag">Magento 2</span>
+                <span class="tag">E-commerce</span>
+                <span class="tag">Integrações</span>
+                <span class="tag">Olist Tiny</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">IT Intern</h3>
+                  <p class="timeline-company">GasGas Motorcycles</p>
+                </div>
+                <time class="timeline-period" datetime="2023-11">nov/2023 – fev/2024</time>
+              </div>
+              <p class="timeline-desc">
+                Suporte interno, tratamento de incidentes, fotos de produtos para e-commerce
+                e apoio a clientes B2B em demandas de baixo nível.
+              </p>
+              <div class="tag-group">
+                <span class="tag">Suporte TI</span>
+                <span class="tag">E-commerce</span>
+                <span class="tag">B2B</span>
+              </div>
+            </div>
+          </article>
+
         </div>
       </div>
-    </footer>
-  </body>
+    </section>
+
+    <!-- ===================== PROJETOS ===================== -->
+    <section class="section" id="projetos">
+      <div class="container">
+        <p class="section-label reveal">Projetos</p>
+        <h2 class="section-title reveal">O que construí</h2>
+
+        <!-- Featured -->
+        <article class="project-featured reveal">
+          <span class="featured-badge">Projeto em destaque</span>
+          <div class="project-featured__body">
+            <div class="project-featured__main">
+              <h3 class="project-featured__name">Mentora</h3>
+              <p class="project-featured__role">Analista de Produto / Product Owner</p>
+              <p class="project-featured__desc">
+                Plataforma de mentoria para estudantes de tecnologia com conexão entre
+                mentores e mentorados, organização de trilhas de estudo e registro de
+                encontros.
+              </p>
+              <div class="project-featured__contrib">
+                <span class="contrib-label">Contribuição</span>
+                <p>
+                  Condução de discovery, priorização do backlog e alinhamento com o time
+                  de desenvolvimento.
+                </p>
+              </div>
+            </div>
+            <div class="project-featured__tags">
+              <span class="tag tag--accent">Product Owner</span>
+              <span class="tag tag--accent">Discovery</span>
+              <span class="tag tag--accent">Backlog</span>
+              <span class="tag tag--accent">Mentoria</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Grid -->
+        <div class="projects-grid">
+
+          <article class="project-card reveal">
+            <div class="project-card__top">
+              <h3 class="project-card__name">Site sobre Scrum</h3>
+              <span class="project-card__role-pill">Product Owner</span>
+            </div>
+            <p class="project-card__desc">
+              Site informativo sobre a metodologia Scrum com módulos de ensino e testes
+              interativos.
+            </p>
+            <p class="project-card__contrib">
+              Definição de requisitos, comunicação com o cliente e alinhamento de escopo
+              e necessidades da entrega.
+            </p>
+            <div class="tag-group">
+              <span class="tag">Product Owner</span>
+              <span class="tag">Scrum</span>
+              <span class="tag">Requisitos</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-card__top">
+              <h3 class="project-card__name">V. Analytics</h3>
+              <span class="project-card__role-pill">Front-end</span>
+            </div>
+            <p class="project-card__desc">
+              Ferramenta de gestão para equipes de Geoprocessamento com controle de
+              demandas, histórico de atividades e relatórios.
+            </p>
+            <p class="project-card__contrib">
+              Construção de uma experiência mais clara para uso operacional.
+            </p>
+            <div class="tag-group">
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Front-end</span>
+              <span class="tag">Geoprocessamento</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-card__top">
+              <h3 class="project-card__name">ramg.o</h3>
+              <span class="project-card__role-pill">Front-end</span>
+            </div>
+            <p class="project-card__desc">
+              Ferramenta para gestão alimentar com controle de refeições, receitas e
+              dashboard nutricional.
+            </p>
+            <p class="project-card__contrib">
+              Transformação de requisitos em fluxos e telas utilizáveis.
+            </p>
+            <div class="tag-group">
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Front-end</span>
+              <span class="tag">Dashboard</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-card__top">
+              <h3 class="project-card__name">floatData</h3>
+              <span class="project-card__role-pill">Scrum Master</span>
+            </div>
+            <p class="project-card__desc">
+              Dispositivo de monitoramento GPS com app Android para exibição de dados
+              em tempo real.
+            </p>
+            <p class="project-card__contrib">
+              Organização do trabalho do time e apoio na consistência da interface.
+            </p>
+            <div class="tag-group">
+              <span class="tag">Scrum</span>
+              <span class="tag">Design System</span>
+              <span class="tag">GPS</span>
+              <span class="tag">Android</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-card__top">
+              <h3 class="project-card__name">Controle de Estoque com RFID</h3>
+              <span class="project-card__role-pill">Dev & Docs</span>
+            </div>
+            <p class="project-card__desc">
+              Solução de controle de estoque com tecnologia RFID para leitura automática
+              de produtos.
+            </p>
+            <p class="project-card__contrib">
+              Estruturação de uma solução funcional e bem comunicada.
+            </p>
+            <div class="tag-group">
+              <span class="tag">RFID</span>
+              <span class="tag">Documentação</span>
+              <span class="tag">Hardware</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section class="section section--alt" id="skills">
+      <div class="container">
+        <p class="section-label reveal">Skills</p>
+        <h2 class="section-title reveal">Ferramentas e práticas</h2>
+
+        <div class="skills-grid">
+
+          <div class="skills-cat reveal">
+            <div class="skills-cat__header skills-cat__header--produto">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+              </svg>
+              <span>Produto</span>
+            </div>
+            <div class="skills-list">
+              <span class="skill-pill skill-pill--produto">Product Discovery</span>
+              <span class="skill-pill skill-pill--produto">Backlog</span>
+              <span class="skill-pill skill-pill--produto">Priorização</span>
+              <span class="skill-pill skill-pill--produto">Refinamento</span>
+              <span class="skill-pill skill-pill--produto">Product Owner</span>
+            </div>
+          </div>
+
+          <div class="skills-cat reveal">
+            <div class="skills-cat__header skills-cat__header--negocio">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+              <span>Negócio &amp; Colaboração</span>
+            </div>
+            <div class="skills-list">
+              <span class="skill-pill skill-pill--negocio">Stakeholders</span>
+              <span class="skill-pill skill-pill--negocio">Comunicação</span>
+              <span class="skill-pill skill-pill--negocio">Scrum</span>
+              <span class="skill-pill skill-pill--negocio">Kanban</span>
+            </div>
+          </div>
+
+          <div class="skills-cat reveal">
+            <div class="skills-cat__header skills-cat__header--tech">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+              </svg>
+              <span>Base Técnica</span>
+            </div>
+            <div class="skills-list">
+              <span class="skill-pill skill-pill--tech">PostgreSQL</span>
+              <span class="skill-pill skill-pill--tech">MySQL</span>
+              <span class="skill-pill skill-pill--tech">React</span>
+              <span class="skill-pill skill-pill--tech">TypeScript</span>
+              <span class="skill-pill skill-pill--tech">Git</span>
+              <span class="skill-pill skill-pill--tech">GitHub</span>
+              <span class="skill-pill skill-pill--tech">Figma</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTATO ===================== -->
+    <section class="section contact" id="contato">
+      <div class="container">
+        <div class="contact-inner">
+          <p class="section-label reveal">Contato</p>
+          <h2 class="contact-title reveal">Vamos conversar?</h2>
+          <p class="contact-text reveal">
+            Estou aberto a oportunidades em produto digital, discovery e times que valorizam
+            a intersecção entre negócio, experiência e tecnologia. Me chama!
+          </p>
+          <div class="contact-actions reveal">
+            <a href="mailto:maurodopradosantos@gmail.com" class="btn btn--primary">
+              Enviar e-mail
+            </a>
+            <a href="https://linkedin.com/in/omaurosantos" target="_blank" rel="noopener noreferrer"
+               class="btn btn--secondary">LinkedIn</a>
+            <a href="https://github.com/omaurosantos/" target="_blank" rel="noopener noreferrer"
+               class="btn btn--ghost">GitHub</a>
+          </div>
+          <p class="contact-email reveal">maurodopradosantos@gmail.com</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">mauro.</span>
+      <p class="footer-copy">
+        &copy; 2026 Mauro Santos &mdash; Site estático publicado no GitHub Pages
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
 </html>
