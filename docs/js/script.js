@@ -1,4 +1,19 @@
 /* =========================================
+   TEMA — dark (primário) / light toggle
+   ========================================= */
+const root = document.documentElement;
+
+// Lê preferência salva; padrão é dark
+const savedTheme = localStorage.getItem('theme') || 'dark';
+root.setAttribute('data-theme', savedTheme);
+
+document.getElementById('theme-toggle').addEventListener('click', () => {
+  const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+});
+
+/* =========================================
    NAVBAR — scroll effect
    ========================================= */
 const navbar = document.getElementById('navbar');

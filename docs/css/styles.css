@@ -36,7 +36,7 @@ ul { list-style: none; }
   /* Backgrounds */
   --bg:         #F3F5FA;
   --bg-surface: #FFFFFF;
-  --bg-alt:     #ECF0F8;
+  --bg-alt:     #E4EAF5;
 
   /* Text */
   --text-900: #111827;
@@ -80,6 +80,41 @@ ul { list-style: none; }
   --nav-h:  64px;
   --wrap:   1100px;
   --sec-py: 96px;
+}
+
+/* =========================================
+   DARK MODE — tokens
+   ========================================= */
+[data-theme="dark"] {
+  /* Backgrounds */
+  --bg:         #0D1117;
+  --bg-surface: #161B27;
+  --bg-alt:     #121720;
+
+  /* Text */
+  --text-900: #E2E8F4;
+  --text-600: #9AABC4;
+  --text-400: #6B7A92;
+
+  /* Accent */
+  --accent:       #5B8DEF;
+  --accent-dim:   #172040;
+  --accent-hover: #7BA5F8;
+
+  /* Borders */
+  --border:        #1E2A3E;
+  --border-subtle: #162035;
+
+  /* Skill categories */
+  --prod-color: #7AADFF; --prod-bg: #0F1E3A;
+  --neg-color:  #34D399; --neg-bg:  #052E1A;
+  --tech-color: #FBBF24; --tech-bg: #2C1A00;
+
+  /* Shadows — mais opacos no fundo escuro */
+  --s-xs: 0 1px 2px rgba(0,0,0,.3);
+  --s-sm: 0 2px 8px rgba(0,0,0,.4),  0 1px 2px rgba(0,0,0,.25);
+  --s-md: 0 4px 16px rgba(0,0,0,.5), 0 2px 4px rgba(0,0,0,.25);
+  --s-lg: 0 8px 32px rgba(0,0,0,.55),0 4px 8px rgba(0,0,0,.3);
 }
 
 /* =========================================
@@ -191,6 +226,40 @@ ul { list-style: none; }
 .nav-toggle[aria-expanded="true"] .hamburger::before    { top: 0; transform: rotate(45deg); }
 .nav-toggle[aria-expanded="true"] .hamburger::after     { top: 0; transform: rotate(-45deg); }
 
+/* nav-end — agrupa menu, toggle de tema e hamburger */
+.nav-end {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Botão de alternância de tema */
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  color: var(--text-600);
+  flex-shrink: 0;
+  transition: color var(--t), background var(--t), border-color var(--t);
+}
+.theme-toggle:hover {
+  color: var(--accent);
+  background: var(--accent-dim);
+  border-color: var(--accent);
+}
+
+/* Ícones: sol visível no dark, lua visível no light */
+.icon-sun  { display: none; }
+.icon-moon { display: block; }
+[data-theme="dark"] .icon-sun  { display: block; }
+[data-theme="dark"] .icon-moon { display: none; }
+
 /* Mobile menu */
 @media (max-width: 700px) {
   .nav-toggle { display: block; }
@@ -253,7 +322,7 @@ ul { list-style: none; }
   position: relative;
   z-index: 1;
   padding-top: 56px;
-  padding-bottom: 140px;
+  padding-bottom: 80px;
 }
 
 /* Badge */
@@ -318,8 +387,9 @@ ul { list-style: none; }
 }
 
 .hero-tagline {
-  font-size: clamp(1rem, 1.8vw, 1.15rem);
-  color: var(--text-600);
+  font-size: clamp(1.1rem, 2vw, 1.25rem);
+  font-weight: 500;
+  color: var(--text-900);
   line-height: 1.65;
   max-width: 520px;
   margin-bottom: 40px;
@@ -345,7 +415,7 @@ ul { list-style: none; }
 .social-link {
   display: grid;
   place-items: center;
-  width: 40px; height: 40px;
+  width: 44px; height: 44px;
   border-radius: var(--r-sm);
   border: 1px solid var(--border);
   background: var(--bg-surface);
@@ -555,6 +625,34 @@ ul { list-style: none; }
   background: var(--accent);
   border: 2px solid var(--bg-alt);
   box-shadow: 0 0 0 3px var(--accent-dim);
+}
+
+/* Grupo de empresa — duas funções sem repetir o nome */
+.timeline-group {
+  position: relative;
+  margin-bottom: 28px;
+}
+.timeline-group:last-child { margin-bottom: 0; }
+
+.timeline-group__company {
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 12px;
+  padding-left: 0;
+}
+
+.timeline-item--sub {
+  margin-bottom: 14px;
+  padding-left: 0;
+}
+.timeline-item--sub:last-child { margin-bottom: 0; }
+
+/* Dot menor para itens agrupados */
+.timeline-dot--sm {
+  width: 8px; height: 8px;
+  left: -37px; top: 24px;
+  box-shadow: 0 0 0 2px var(--accent-dim);
 }
 
 .timeline-card {
@@ -883,13 +981,18 @@ ul { list-style: none; }
 
 .contact-email {
   font-size: .875rem;
-  color: var(--text-400);
+  color: var(--text-600);
   font-family: 'Courier New', monospace;
   padding: 8px 16px;
-  background: var(--bg-alt);
+  background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--r-sm);
   display: inline-block;
+  transition: color var(--t), border-color var(--t);
+}
+.contact-email:hover {
+  color: var(--accent);
+  border-color: rgba(43,99,217,.3);
 }
 
 /* =========================================
@@ -955,3 +1058,250 @@ ul { list-style: none; }
 
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
 ::selection { background: var(--accent-dim); color: var(--accent); }
+
+/* =========================================
+   HERO — LAYOUT COM FOTO
+   ========================================= */
+.hero-layout {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+
+.hero-text { flex: 1; min-width: 0; }
+
+.hero-photo {
+  flex-shrink: 0;
+  width: clamp(200px, 24vw, 300px);
+  animation: fadeUp 600ms 250ms ease both;
+}
+
+.hero-photo img {
+  width: 100%;
+  border-radius: var(--r-lg);
+  box-shadow: var(--s-lg), 0 0 0 4px var(--bg-surface), 0 0 0 7px rgba(43,99,217,.22);
+  display: block;
+}
+
+/* Tablet: texto em cima, foto abaixo e menor */
+@media (max-width: 860px) {
+  .hero-layout {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .hero-photo {
+    width: clamp(140px, 36vw, 220px);
+    align-self: center;
+  }
+}
+
+/* Mobile: esconde a foto — fundo escuro prejudica o layout */
+@media (max-width: 600px) {
+  .hero-photo { display: none; }
+}
+
+/* =========================================
+   PROJETOS — CARD HORIZONTAL SECUNDÁRIO
+   ========================================= */
+.project-card-h {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 22px 26px;
+  box-shadow: var(--s-sm);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+  transition: box-shadow var(--t), border-color var(--t);
+}
+.project-card-h:hover {
+  box-shadow: var(--s-md);
+  border-color: rgba(43, 99, 217, .2);
+}
+.project-card-h__top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.project-card-h__name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-900);
+}
+.project-card-h__desc {
+  font-size: .875rem;
+  line-height: 1.65;
+  color: var(--text-600);
+}
+.project-card-h__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 24px;
+  border-left: 1px solid var(--border-subtle);
+}
+@media (max-width: 600px) {
+  .project-card-h {
+    grid-template-columns: 1fr;
+  }
+  .project-card-h__meta {
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 12px;
+  }
+}
+
+/* =========================================
+   CASES REAIS
+   ========================================= */
+.cases-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.case-card {
+  position: relative;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 32px;
+  box-shadow: var(--s-md);
+  overflow: hidden;
+  transition: box-shadow var(--t);
+}
+.case-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent) 0%, #7EB3FF 100%);
+}
+.case-card:hover { box-shadow: var(--s-lg); }
+
+.case-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.case-card__name {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+  font-weight: 700;
+  letter-spacing: -.025em;
+  color: var(--text-900);
+  line-height: 1.2;
+}
+
+.case-impact-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 13px;
+  background: #ECFDF5;
+  color: #059669;
+  border: 1px solid rgba(5,150,105,.2);
+  border-radius: 100px;
+  font-size: .78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.case-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+@media (max-width: 600px) {
+  .case-fields { grid-template-columns: 1fr; }
+}
+
+.case-field {
+  padding: 16px;
+  background: var(--bg);
+  border-radius: var(--r-sm);
+  border: 1px solid var(--border-subtle);
+}
+
+.case-field--impact {
+  background: var(--accent-dim);
+  border-color: rgba(43,99,217,.2);
+}
+
+.case-field__label {
+  display: block;
+  font-size: .67rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--text-400);
+  margin-bottom: 6px;
+}
+.case-field--impact .case-field__label { color: var(--accent); }
+
+.case-field__text {
+  font-size: .88rem;
+  line-height: 1.65;
+  color: var(--text-600);
+}
+.case-field--impact .case-field__text {
+  color: var(--accent-hover);
+  font-weight: 500;
+}
+
+/* =========================================
+   DARK MODE — overrides de componentes
+   (cores que não usam tokens CSS)
+   ========================================= */
+
+/* Navbar scrolled — fundo escuro com blur */
+[data-theme="dark"] .navbar.scrolled {
+  background: rgba(13,17,23,.92);
+}
+
+/* Hero glows — versão sutil para dark */
+[data-theme="dark"] .hero-glow--1 {
+  background: radial-gradient(circle, rgba(91,141,239,.18) 0%, transparent 68%);
+  opacity: .9;
+}
+[data-theme="dark"] .hero-glow--2 {
+  background: radial-gradient(circle, rgba(91,141,239,.12) 0%, transparent 68%);
+  opacity: .8;
+}
+
+/* Foto — ring mais visível no dark */
+[data-theme="dark"] .hero-photo img {
+  box-shadow: var(--s-lg), 0 0 0 4px var(--bg-surface), 0 0 0 7px rgba(91,141,239,.35);
+}
+
+/* Impact badge — verde adaptado para dark */
+[data-theme="dark"] .case-impact-badge {
+  background: #052E1A;
+  color: #34D399;
+  border-color: rgba(52,211,153,.22);
+}
+
+/* Skill pill borders em dark */
+[data-theme="dark"] .skill-pill--negocio { border-color: rgba(52,211,153,.22); }
+[data-theme="dark"] .skill-pill--tech    { border-color: rgba(251,191,36,.22); }
+[data-theme="dark"] .skill-pill--produto { border-color: rgba(91,141,239,.25); }
+
+/* Case card — topo gradiente mais suave */
+[data-theme="dark"] .case-card::before,
+[data-theme="dark"] .project-featured::before {
+  background: linear-gradient(90deg, var(--accent) 0%, #3A6FD4 100%);
+}
+
+/* Timeline period tag — texto mais legível */
+[data-theme="dark"] .timeline-period {
+  color: var(--text-600);
+}
