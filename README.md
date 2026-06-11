@@ -14,4 +14,6 @@
 
 **Vídeos de Apresentação**
 
-🎤 6DSM - [Vídeo](LINK_VIDEO_6DSM)
+🎤 2DSM - Vídeo (ainda não era necessário construir o portfólio)
+🎤 4DSM - [Vídeo](https://www.youtube.com/watch?v=k0f10wmbGcw)
+🎤 6DSM - [Vídeo](https://youtu.be/pbHSSaS2Ffw?is=jgUdo4OCJuAWC6ui)
