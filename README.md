@@ -1,8 +1,8 @@
 # Portfólio de Projetos - Fatec Jacareí
 
-**Aluno:** Mauro do Prado Santos 
-**Curso:** Desenvolvimento de Software Multiplataforma  
-**Turma:** 2º Semestre de 2023
+**Aluno:** Mauro do Prado Santos </br>
+**Curso:** Desenvolvimento de Software Multiplataforma </br>
+**Turma:** 2º Semestre de 2023 </br>
 
 ---
 
