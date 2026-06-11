@@ -187,8 +187,8 @@ A foto do hero tem fundo escuro; em telas ≤ 600px fica visualmente ruim. Solu�
 ## Conteúdo atual
 
 **Pessoa:** Mauro Santos  
-**Cargo:** Product Analyst  
-**Tagline:** "PM que lê código, escreve SQL e faz as perguntas que a maioria evita."  
+**Cargo:** Product Owner  
+**Tagline:** "Interesse em produto, dados, discovery e tecnologia."  
 **E-mail:** maurodopradosantos@gmail.com  
 **LinkedIn:** linkedin.com/in/omaurosantos  
 **GitHub:** github.com/omaurosantos
