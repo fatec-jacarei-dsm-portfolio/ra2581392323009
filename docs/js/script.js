@@ -80,25 +80,33 @@ const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-link');
 const projectLinks = document.querySelectorAll('.nav-dropdown__link');
 
-const sectionObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const id = entry.target.id;
-      navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        const isProjectsToggle = link === projectsToggle;
-        link.classList.toggle('active',
-          href === `#${id}` || (isProjectsToggle && projectSectionIds.includes(id))
-        );
-      });
-      projectLinks.forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-      });
+const updateActiveNav = () => {
+  const navHeight = navbar.offsetHeight || 0;
+  const activeLine = window.scrollY + navHeight + 32;
+  let activeId = sections[0]?.id;
+
+  sections.forEach(section => {
+    if (section.offsetTop <= activeLine) {
+      activeId = section.id;
     }
   });
-}, { threshold: 0.35 });
 
-sections.forEach(s => sectionObserver.observe(s));
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    const isProjectsToggle = link === projectsToggle;
+    link.classList.toggle('active',
+      href === `#${activeId}` || (isProjectsToggle && projectSectionIds.includes(activeId))
+    );
+  });
+
+  projectLinks.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === `#${activeId}`);
+  });
+};
+
+window.addEventListener('scroll', updateActiveNav, { passive: true });
+window.addEventListener('resize', updateActiveNav);
+updateActiveNav();
 
 /* =========================================
    SCROLL REVEAL — IntersectionObserver
