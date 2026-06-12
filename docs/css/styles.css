@@ -651,6 +651,10 @@ ul { list-style: none; }
   color: var(--text-600);
 }
 
+#projetos .section-intro {
+  max-width: 100%;
+}
+
 /* =========================================
    SOBRE
    ========================================= */
